@@ -1,6 +1,8 @@
 <script>
   import { onMount } from "svelte";
 
+  // Add your Open AI API key here if you are using a local build
+  // and don't want to add it every time you open the browser.
   let apiKey = null;
 
   let isGrouping = false;
@@ -73,6 +75,12 @@
       event.target.reset();
     }
   }
+
+  function resetAPIKey() {
+    chrome.storage.session.remove("OPEN_AI_API_KEY", () => {
+      apiKey = null;
+    });
+  }
 </script>
 
 <main>
@@ -109,6 +117,7 @@
         {/if}
       </button>
     </form>
+    <button on:click={resetAPIKey} id="reset-api-key" type="submit">Reset API Key</button>
   {:else}
     <h1>Add your Open AI API Key</h1>
     <p>
