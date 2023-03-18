@@ -1,0 +1,14 @@
+body {
+  width: 20rem;
+}
+
+button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+
+h3,
+p {
+  margin: 0;
+}

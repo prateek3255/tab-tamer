@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "AI tab grouping",
+  "description": "Group your tabs with simple command with GPT-3",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "tabGroups",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
