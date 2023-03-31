@@ -96,10 +96,8 @@
         name="description"
         placeholder="Eg: Group all tabs related to React hooks"
       />
-      <br />
-      <br />
+      <span class="spacer" />
       <label for="name">Group name:</label>
-      <br />
       <input
         type="text"
         required
@@ -107,38 +105,160 @@
         name="name"
         placeholder="Eg: React Hooks"
       />
-      <br />
-      <br />
-      <button id="group-button" type="submit" disabled={isGrouping}>
-        {#if isGrouping}
-          Grouping...
-        {:else}
-          Group tabs
-        {/if}
-      </button>
+      <div class="button-container">
+        <button
+          id="group-button"
+          type="submit"
+          disabled={isGrouping}
+          class="button button-primary"
+        >
+          {#if isGrouping}
+            Grouping...
+          {:else}
+            Group tabs
+          {/if}
+        </button>
+        <button
+          on:click={resetAPIKey}
+          id="reset-api-key"
+          type="button"
+          class="button button-secondary">Reset API Key</button
+        >
+      </div>
     </form>
-    <button on:click={resetAPIKey} id="reset-api-key" type="submit">Reset API Key</button>
   {:else}
     <h1>Add your Open AI API Key</h1>
     <p>
       Please add your OpenAI API key to use the extension. Your API key is
       stored safely in memory and never leaves your borwser. <a
         href="https://platform.openai.com/account/api-keys"
-        >Generate your Open AI API key from.</a
+        >Generate your Open AI API key.</a
       >
     </p>
-    <br />
-    <br />
     <form on:submit|preventDefault={addApiKey}>
       <label for="apiKey">Your Open AI API Key:</label>
-      <br />
-      <input type="password" required id="apiKey" name="apiKey" />
-      <br />
-      <br />
-      <button id="add-api-key" type="submit">Add API Key</button>
+      <input
+        type="password"
+        required
+        id="apiKey"
+        name="apiKey"
+        placeholder="Eg: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      />
+      <span class="spacer" />
+      <button id="add-api-key" type="submit" class="button button-primary"
+        >Add API Key</button
+      >
     </form>
   {/if}
 </main>
 
 <style>
+  h1 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  /* Normal state of anchor tag */
+  a {
+    color: #64b5f6; 
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #42a5f5;
+    text-decoration: underline;
+  }
+
+  /* Visited state of anchor tag */
+  a:visited {
+    color: #90caf9; 
+  }
+
+  main {
+    width: 100%;
+    padding: 16px;
+  }
+
+  textarea {
+    width: 100%;
+    border-radius: 0.25rem;
+    border-width: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.75rem;
+    font-family: "Inter", sans-serif;
+  }
+
+  input {
+    width: 100%;
+    margin: 0;
+    border-radius: 0.25rem;
+    border-width: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.75rem;
+    font-family: "Inter", sans-serif;
+  }
+
+  label {
+    display: block;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    margin-bottom: 4px;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .spacer {
+    display: block;
+    height: 16px;
+    min-height: 16px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Primary button */
+  .button-primary {
+    background-color: #2196f3; /* Light blue primary button color */
+    color: #fff; /* Text color */
+    border: none;
+  }
+
+  .button-primary:hover {
+    background-color: #0d8bf2; /* Slightly darker shade of primary button color */
+    cursor: pointer;
+  }
+
+  /* Secondary button */
+  .button-secondary {
+    background-color: #fff; /* Background color */
+    color: #2196f3; /* Light blue secondary button color */
+    border: 2px solid #2196f3;
+  }
+
+  .button-secondary:hover {
+    background-color: #2196f3; /* Light blue secondary button color */
+    color: #fff;
+    cursor: pointer;
+  }
 </style>

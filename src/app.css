@@ -1,5 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: hsl(0 0% 17.9%);
+}
+
 body {
   width: 20rem;
+  max-width: 20rem;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 button:disabled {
@@ -7,7 +18,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-
+h1,
 h3,
 p {
   margin: 0;
