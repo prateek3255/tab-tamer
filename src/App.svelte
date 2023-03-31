@@ -48,7 +48,7 @@
           prompt: `Find the tab URLs that fit the description\n\nTabs URLs with titles:\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#methods (<input>: The Input (Form Input) element)\nhttps://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus (HTMLElement.focus())\nhttp://localhost:5002/console/api/api-explorer (API Explorer Hasura)\nhttps://kentcdodds.com/blog/stop-mocking-fetch?s=09 (Stop mocking fetch)\n\nDescription: Group all the tabs with related to HTML elements\n\nOutput:\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#methods\nhttps://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus\n\nTabs URLs with titles:\n${currentTabURLWithTitles}\nDescription: ${data.description}\n\nOutput:`,
           temperature: 0,
           max_tokens: 2048,
-          top_p: 1,
+          top_p: 0.2,
           frequency_penalty: 0,
           presence_penalty: 0,
         }),
