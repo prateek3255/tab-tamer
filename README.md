@@ -1,6 +1,6 @@
 # AI Tab Grouper
 
-A chrome extension that groups tabs by with the help of AI.
+An AI-powered Chrome extension that groups your tabs intelligently based on a prompt.
 
 ## How to use
 
