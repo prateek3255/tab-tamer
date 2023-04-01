@@ -1,4 +1,4 @@
-# AI Tab Grouper
+# TabTamer
 
 An AI-powered Chrome extension that groups your tabs intelligently based on a prompt.
 
@@ -11,6 +11,8 @@ An AI-powered Chrome extension that groups your tabs intelligently based on a pr
 6. Click on the extension icon to start using it
 
 ## Local development
+This extension uses [popups](https://developer.chrome.com/docs/extensions/mv3/user_interface/#popup) to provide a user inteface for interacting with the extension. The popup is built with [Svelte](https://svelte.dev/), and is compiled using [Rollup](https://rollupjs.org/guide/en/). To run the extension locally:
+
 1. Clone the repo
 2. Run `yarn` and `yarn dev` to start the development server
 3. Go to `chrome://extensions` and enable developer mode

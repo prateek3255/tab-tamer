@@ -85,9 +85,8 @@
 
 <main>
   {#if hasAddedApiKey}
-    <h1>Group tabs with GPT-3</h1>
     <form on:submit|preventDefault={groupTabs}>
-      <label for="description">Description for tab grouping:</label>
+      <label for="description">Prompt for grouping the tabs:</label>
       <textarea
         id="description"
         required
