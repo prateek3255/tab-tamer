@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import copy from 'rollup-plugin-copy';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -30,6 +31,14 @@ export default {
             dedupe: ['svelte'],
         }),
         commonjs(),
+
+        copy({
+            targets: [{
+                src: ['manifest.json', 'icons', 'popup.html'],
+                dest: ['dist'],
+            }],
+            verbose: true,
+        }),
 
         // Watch the `src` directory and refresh the
         // browser on changes when not in production

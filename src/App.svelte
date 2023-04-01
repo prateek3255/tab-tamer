@@ -31,7 +31,7 @@
 
     try {
       isGrouping = true;
-      const allTabs = await chrome.tabs.query({});
+      const allTabs = await chrome.tabs.query({ windowId: chrome.windows.WINDOW_ID_CURRENT });
 
       const currentTabURLWithTitles = allTabs
         .map((tab) => tab.url + " (" + tab.title + ")")
