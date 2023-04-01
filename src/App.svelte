@@ -130,7 +130,7 @@
     <p>
       Please add your OpenAI API key to use the extension. Your API key is
       stored safely in memory and never leaves your borwser. <a
-        href="https://platform.openai.com/account/api-keys"
+        href="https://platform.openai.com/account/api-keys" target="_blank" rel="noopener noreferrer"
         >Generate your Open AI API key.</a
       >
     </p>
