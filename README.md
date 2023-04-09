@@ -2,6 +2,8 @@
 
 An AI-powered Chrome extension that groups your tabs intelligently based on a prompt.
 
+Download it on the [Chrome Webstore](https://chrome.google.com/webstore/detail/tabtamer/nocccdpimiknfehopnbldcgiipebjjpj?hl=en&authuser=0).
+
 ## How to use by adding your own API key
 1. Clone the repo
 2. Add your API key in `src/App.svelte` in the `apiKey` variable.
